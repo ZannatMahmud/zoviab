@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-plum-500 font-body antialiased;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-berry-200 text-plum-500;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-blush-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-berry-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-berry-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-berry-500 px-7 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:bg-berry-600 hover:shadow-soft active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-plum-200 bg-transparent px-7 py-3 text-sm font-semibold tracking-wide text-plum-500 transition-all duration-300 hover:border-berry-400 hover:bg-berry-50 hover:text-berry-600 active:scale-[0.98];
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-400 px-7 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:bg-gold-500 hover:shadow-soft active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-plum-200/60 bg-white px-4 py-3 text-sm text-plum-500 placeholder:text-plum-300 transition-all duration-200 focus:border-berry-400 focus:outline-none focus:ring-2 focus:ring-berry-200;
+  }
+
+  .label-field {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-plum-400;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white shadow-card transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wider;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-berry-500;
+  }
+
+  .prose-zovia p {
+    @apply text-base leading-relaxed text-plum-400;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .skeleton {
+    @apply animate-shimmer bg-gradient-to-r from-blush-100 via-blush-200 to-blush-100 bg-[length:1000px_100%] rounded-lg;
+  }
+}
